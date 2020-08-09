@@ -1,6 +1,6 @@
 # Sistem-Informasi-Pelayanan-Klinik-Java-Desktop
 
-Ini adalah sistem informasi klinik menggunakan Java yang bisa digunakan untuk petugas klinik.
+Ini adalah sistem informasi klinik menggunakan Java yang bisa digunakan untuk petugas klinik untuk mengelola pelayanan klinik.
 
 ### Aplikasi menggunakan :
 * Java
