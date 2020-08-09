@@ -32,5 +32,5 @@ kode : PTG0002
 klinik.sql
 
 ### Screenshoot :
-![alt text](https://github.com/[username]/[reponame]//blob/master/src/klinik/gambar/0.png?raw=true)
+![alt text](https://github.com/[username]/[reponame]/blob/master/src/klinik/gambar/0.png?raw=true)
 
