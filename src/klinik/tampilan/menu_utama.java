@@ -21,35 +21,35 @@ public class menu_utama extends javax.swing.JFrame {
     int detik, menit, jam, hari, tanggal, bulan, tahun;
     public menu_utama() {
         initComponents();
-//        new Thread(){
-//            @Override
-//            public void run(){              
-//                GregorianCalendar date = new GregorianCalendar();
-//                String namabulan[] = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
-//                String[] hari_hari = new String[] { "Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu" };
-//                hari = date.get(Calendar.DAY_OF_WEEK) - 1;
-//                tanggal = date.get(Calendar.DAY_OF_MONTH);
-//                bulan = date.get(Calendar.MONTH);
-//                tahun = date.get(Calendar.YEAR);
-//                txtDate.setText(hari_hari[hari] +", "+tanggal + " " + namabulan[bulan]+ " " + tahun);
-//                System.out.println("Tanggal sekarang: "+hari+" "+namabulan[bulan]+" "+tahun);
-//                while(waktumulai == 0){
-//                    Calendar kalender = new GregorianCalendar();
-//                    int jam = kalender.get(Calendar.HOUR);
-//                    int menit = kalender.get(Calendar.MINUTE);
-//                    int detik = kalender.get(Calendar.SECOND);
-//                    int AM_PM = kalender.get(Calendar.AM_PM);
-//                    String siang_malam ="";
-//                    if(AM_PM == 1){
-//                        siang_malam="PM"; 
-//                    }else{
-//                        siang_malam = "AM";   
-//                    }
-//                    String waktu = jam + ":" + menit + ":" + detik + " " + siang_malam;
-//                    txtJam.setText(waktu);               
-//                 }  
-//            }
-//        }.start();
+       new Thread(){
+           @Override
+           public void run(){              
+               GregorianCalendar date = new GregorianCalendar();
+               String namabulan[] = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
+               String[] hari_hari = new String[] { "Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu" };
+               hari = date.get(Calendar.DAY_OF_WEEK) - 1;
+               tanggal = date.get(Calendar.DAY_OF_MONTH);
+               bulan = date.get(Calendar.MONTH);
+               tahun = date.get(Calendar.YEAR);
+               txtDate.setText(hari_hari[hari] +", "+tanggal + " " + namabulan[bulan]+ " " + tahun);
+               System.out.println("Tanggal sekarang: "+hari+" "+namabulan[bulan]+" "+tahun);
+               while(waktumulai == 0){
+                   Calendar kalender = new GregorianCalendar();
+                   int jam = kalender.get(Calendar.HOUR);
+                   int menit = kalender.get(Calendar.MINUTE);
+                   int detik = kalender.get(Calendar.SECOND);
+                   int AM_PM = kalender.get(Calendar.AM_PM);
+                   String siang_malam ="";
+                   if(AM_PM == 1){
+                       siang_malam="PM"; 
+                   }else{
+                       siang_malam = "AM";   
+                   }
+                   String waktu = jam + ":" + menit + ":" + detik + " " + siang_malam;
+                   txtJam.setText(waktu);               
+                }  
+           }
+       }.start();
         setExtendedState(menu_utama.MAXIMIZED_BOTH);
     }
     
