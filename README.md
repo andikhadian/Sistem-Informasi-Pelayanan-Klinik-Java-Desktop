@@ -32,7 +32,5 @@ kode : PTG0002
 klinik.sql
 
 ### Screenshoot :
-![alt text][logo]
-
-[logo]: https://github.com/andikhadian/Sistem-Informasi-Pelayanan-Klinik-Java-Desktop/raw/master/src/klinik/gambar/0.png Login"
+![alt text](https://github.com/[username]/[reponame]//blob/master/src/klinik/gambar/0.png?raw=true)
 
