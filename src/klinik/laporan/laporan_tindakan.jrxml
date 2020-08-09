@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d3dbcf9e-25b8-4ed1-8943-343aab677a95">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     t_tindakan.`kd_tindakan` AS t_tindakan_kd_tindakan,
+     t_tindakan.`tindakan` AS t_tindakan_tindakan,
+     t_tindakan.`harga_tindakan` AS t_tindakan_harga_tindakan
+FROM
+     `t_tindakan` t_tindakan]]>
+	</queryString>
+	<field name="t_tindakan_kd_tindakan" class="java.lang.String"/>
+	<field name="t_tindakan_tindakan" class="java.lang.String"/>
+	<field name="t_tindakan_harga_tindakan" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="88" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="630" height="84" uuid="fcbba902-5f41-41e3-9196-377aca9b07ae"/>
+				<imageExpression><![CDATA["/Users/andikhadian/NetBeansProjects/klinik/src/klinik/gambar/kop.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="555" height="20" uuid="4b74de2b-3366-407b-b9c7-ed0612ec2515"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA TINDAKAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="42" width="100" height="20" uuid="79fbabc2-515c-4a12-b33d-2023f04b95a8"/>
+				<text><![CDATA[Kode Tindakan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="42" width="267" height="20" uuid="04fded9f-ccf4-4ac3-9d1b-e657577ca512"/>
+				<text><![CDATA[Tindakan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="42" width="100" height="20" uuid="a5e83c8b-d033-4961-9862-2fbb3fc27251"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Harga Tindakan]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="34" y="0" width="100" height="20" uuid="7da6b2ac-30b4-4e6c-ba08-620a6f5bec21"/>
+				<textFieldExpression><![CDATA[$F{t_tindakan_kd_tindakan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="3" width="267" height="20" uuid="4142afab-fa79-4423-81f8-fe230e54cd21"/>
+				<textFieldExpression><![CDATA[$F{t_tindakan_tindakan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="401" y="0" width="100" height="20" uuid="0c94c90d-05b1-428c-9d11-6d86885a3a79"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{t_tindakan_harga_tindakan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="34" width="40" height="20" uuid="4ebb3c86-d649-4cb7-9a73-9ff5338d12eb"/>
+				<textFieldExpression><![CDATA["/" + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="423" y="34" width="92" height="20" uuid="38356b6b-9ee9-4dcd-af59-ce661f2a0892"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="195" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="397" y="57" width="158" height="20" uuid="214d8712-5198-4775-a326-270735cd31cb"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE d MMMMM yyyy",new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="356" y="57" width="41" height="20" uuid="c0240011-00c1-447a-8f1e-b36e13e57b19"/>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="81" width="68" height="20" uuid="9e14eba7-2fb0-4241-abc6-2395a988e42f"/>
+				<text><![CDATA[Kepala Klinik]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="382" y="160" width="109" height="20" uuid="6f5ecf6a-d5e6-45c4-90d9-d523f49d0333"/>
+				<text><![CDATA[Ahmad Hartono, M.M.]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

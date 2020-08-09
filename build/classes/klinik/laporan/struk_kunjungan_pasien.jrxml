@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3d5f9d80-a0ee-4f36-8502-776a67e2e367">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="22b8dffa-fe8c-49b8-a0e0-d99929eb7677"/>
+	<parameter name="kd_kunjungan" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="kd_pasien" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="kd_dokter" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     t_kunjungan.`kd_kunjungan` AS t_kunjungan_kd_kunjungan,
+     t_kunjungan.`tgl_kunjungan` AS t_kunjungan_tgl_kunjungan,
+     t_kunjungan.`kd_pasien` AS t_kunjungan_kd_pasien,
+     t_kunjungan.`keluhan` AS t_kunjungan_keluhan,
+     t_kunjungan.`kd_dokter` AS t_kunjungan_kd_dokter,
+     t_dokter.`kd_dokter` AS t_dokter_kd_dokter,
+     t_dokter.`nama_dokter` AS t_dokter_nama_dokter,
+     t_dokter.`jenis_kelamin` AS t_dokter_jenis_kelamin,
+     t_dokter.`no_hp` AS t_dokter_no_hp,
+     t_dokter.`spesialis` AS t_dokter_spesialis,
+     t_pasien.`kd_pasien` AS t_pasien_kd_pasien,
+     t_pasien.`nama_pasien` AS t_pasien_nama_pasien,
+     t_pasien.`umur` AS t_pasien_umur,
+     t_pasien.`jenis_kelamin` AS t_pasien_jenis_kelamin,
+     t_pasien.`no_hp` AS t_pasien_no_hp
+FROM
+     `t_kunjungan` t_kunjungan,
+     `t_dokter` t_dokter,
+     `t_pasien` t_pasien
+WHERE
+     t_kunjungan.`kd_kunjungan` = $P{kd_kunjungan} AND
+t_pasien.`kd_pasien` = $P{kd_pasien} AND
+t_dokter.`kd_dokter` = $P{kd_dokter}]]>
+	</queryString>
+	<field name="t_kunjungan_kd_kunjungan" class="java.lang.String"/>
+	<field name="t_kunjungan_tgl_kunjungan" class="java.sql.Date"/>
+	<field name="t_kunjungan_kd_pasien" class="java.lang.String"/>
+	<field name="t_kunjungan_keluhan" class="java.lang.String"/>
+	<field name="t_kunjungan_kd_dokter" class="java.lang.String"/>
+	<field name="t_dokter_kd_dokter" class="java.lang.String"/>
+	<field name="t_dokter_nama_dokter" class="java.lang.String"/>
+	<field name="t_dokter_jenis_kelamin" class="java.lang.String"/>
+	<field name="t_dokter_no_hp" class="java.lang.String"/>
+	<field name="t_dokter_spesialis" class="java.lang.String"/>
+	<field name="t_pasien_kd_pasien" class="java.lang.String"/>
+	<field name="t_pasien_nama_pasien" class="java.lang.String"/>
+	<field name="t_pasien_umur" class="java.lang.String"/>
+	<field name="t_pasien_jenis_kelamin" class="java.lang.String"/>
+	<field name="t_pasien_no_hp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="160" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="102" width="555" height="35" uuid="fa4a998c-9c08-4b2c-8d79-160ef0cb580d"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Struk Kunjungan Pasien]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="630" height="84" uuid="6ac0c6f8-52b1-4045-8ca7-cc383fa11456"/>
+				<imageExpression><![CDATA["/Users/andikhadian/NetBeansProjects/klinik/src/klinik/gambar/kop.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="295" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="da1a4812-6125-432f-af81-df3312f2b291"/>
+				<text><![CDATA[Kode Kunjungan]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="0" width="100" height="20" uuid="ad45250d-350e-4dfb-a943-24c0fd51ae34"/>
+				<textFieldExpression><![CDATA[$F{t_kunjungan_kd_kunjungan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="35" width="100" height="20" uuid="85569eb5-eeb4-441a-9652-45ab8b017931"/>
+				<text><![CDATA[Tanggal Kunjungan]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="119" y="35" width="151" height="20" uuid="63b60e01-a152-4d2f-8199-3d973b077cde"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE d MMMMM yyyy",new java.util.Locale("id")).format($F{t_kunjungan_tgl_kunjungan})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="328" y="0" width="100" height="20" uuid="37392a43-6d14-4444-89a7-a51529adf550"/>
+				<text><![CDATA[Kode Dokter]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="20" uuid="59f501ef-d0f0-48b3-90f1-3b795c7e39f2"/>
+				<textFieldExpression><![CDATA[$F{t_kunjungan_kd_dokter}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="328" y="35" width="100" height="20" uuid="4728ab10-75c5-4d64-a6a7-2e0e9b35fd88"/>
+				<text><![CDATA[Nama Dokter]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="35" width="100" height="20" uuid="c5db0ea8-e1e3-426f-910d-8a448de10e28"/>
+				<textFieldExpression><![CDATA[$F{t_dokter_nama_dokter}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="100" y="0" width="7" height="20" uuid="82acae3d-1e4c-4814-b2fa-0f6520635626"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="35" width="7" height="20" uuid="9736b438-f3b8-4dbc-a822-eceeeb63c930"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="428" y="0" width="7" height="20" uuid="add34c01-7147-451d-a2f4-216e87161850"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="428" y="35" width="7" height="20" uuid="8083c002-621e-44f5-aa47-bec21d72b85c"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="68" width="100" height="20" uuid="27d5cf46-74a1-4a16-99d7-24314dd773c6"/>
+				<text><![CDATA[Kode Pasien]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="242" width="100" height="20" uuid="94bace2b-1bb8-4da2-b65f-78598caccaf4"/>
+				<text><![CDATA[Keluhan Pasien]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="119" y="68" width="100" height="20" uuid="40aba751-a893-4c99-830a-76680b0ee666"/>
+				<textFieldExpression><![CDATA[$F{t_kunjungan_kd_pasien}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="242" width="430" height="20" uuid="37550e60-cae1-4047-bc85-cdeb87a8d389"/>
+				<textFieldExpression><![CDATA[$F{t_kunjungan_keluhan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="100" y="68" width="7" height="20" uuid="bcd1dd33-b106-4c2d-90e1-14888e97441f"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="242" width="7" height="20" uuid="27ab452f-93fe-48ce-b762-5b2c75ecb931"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="68" width="100" height="20" uuid="d9076631-b5c2-41bb-89bf-85cddf3897ae"/>
+				<text><![CDATA[Jenis Kelamin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="106" width="100" height="20" uuid="1d43b5de-9eb8-42b6-8e08-760dcd93181c"/>
+				<text><![CDATA[Spesialis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="428" y="68" width="7" height="20" uuid="8ce2f8d1-5861-467e-abcf-953cd74a311a"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="428" y="106" width="7" height="20" uuid="ed0d50ce-cbd8-40c5-8004-6f3757ab4b8a"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="68" width="100" height="20" uuid="087378e5-c28b-4520-984c-75e89b68513a"/>
+				<textFieldExpression><![CDATA[$F{t_dokter_jenis_kelamin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="106" width="100" height="20" uuid="1ddfcbba-cf1a-4db2-b328-31abb7b985cd"/>
+				<textFieldExpression><![CDATA[$F{t_dokter_spesialis}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="106" width="100" height="20" uuid="f59f9d55-1315-4036-9dc8-41ce842163e6"/>
+				<text><![CDATA[Nama Pasien]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="106" width="7" height="20" uuid="0c9c33c6-6001-4600-beaf-0fc999b2da4f"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="119" y="106" width="100" height="20" uuid="a49a72ec-9584-469a-a978-69d7c509fd61"/>
+				<textFieldExpression><![CDATA[$F{t_pasien_nama_pasien}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="140" width="100" height="20" uuid="5e2563b3-df82-4bbe-b78a-88ffb8eab6d6"/>
+				<text><![CDATA[Jenis Kelamin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="140" width="7" height="20" uuid="6dbae1fd-d8ba-4556-9a28-eb8d3fd97645"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="174" width="100" height="20" uuid="2b0eac06-1f8e-477b-bda3-2e514f50ff94"/>
+				<textFieldExpression><![CDATA[$F{t_pasien_umur}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="140" width="100" height="20" uuid="8732e815-7770-422f-8309-6b3cde750af0"/>
+				<textFieldExpression><![CDATA[$F{t_pasien_jenis_kelamin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="174" width="100" height="20" uuid="46e6188e-43b4-4672-931c-ab364713cb06"/>
+				<text><![CDATA[Umur ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="174" width="7" height="20" uuid="faca8ac1-95c3-4e9d-89b8-2db3b207220f"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="209" width="100" height="20" uuid="93c0b05b-802a-40c8-a6df-edfc691dbe08"/>
+				<textFieldExpression><![CDATA[$F{t_pasien_no_hp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="97" y="209" width="10" height="20" uuid="e26ea64b-292b-44b0-8021-e233e96dd95e"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="209" width="100" height="20" uuid="c9b5352b-b77e-406c-b87e-11ed9d22561d"/>
+				<text><![CDATA[No Handphone]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="184" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="397" y="85" width="158" height="20" uuid="bbe5aa4f-12f0-4e3a-ad73-bd476d295bd4"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE d MMMMM yyyy",new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="356" y="85" width="41" height="20" uuid="249b8148-8721-4304-8f9e-c18c029239f2"/>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="396" y="105" width="90" height="20" uuid="80e98f16-455e-41b7-ac85-39d76a6f0323"/>
+				<text><![CDATA[Petugas Klinik]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="376" y="164" width="109" height="20" uuid="b8fa3453-3252-4a27-af02-540bebf0b437"/>
+				<text><![CDATA[Ahmad Hartono, M.M.]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

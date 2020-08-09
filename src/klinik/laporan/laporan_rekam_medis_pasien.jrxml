@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0a5b0e3a-b3c5-47b2-9f9a-a52cee8ff4a8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="tgl_awal" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tgl_akhir" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     t_rekam_medis.`kd_rekam_medis` AS t_rekam_medis_kd_rekam_medis,
+     t_rekam_medis.`tgl_rekam_medis` AS t_rekam_medis_tgl_rekam_medis,
+     t_rekam_medis.`kd_kunjungan` AS t_rekam_medis_kd_kunjungan,
+     t_rekam_medis.`hasil_diagnosa` AS t_rekam_medis_hasil_diagnosa,
+     t_rekam_medis.`total_biaya` AS t_rekam_medis_total_biaya
+FROM
+     `t_rekam_medis` t_rekam_medis
+WHERE 
+	t_rekam_medis.`tgl_rekam_medis` BETWEEN $P{tgl_awal} AND $P{tgl_akhir}]]>
+	</queryString>
+	<field name="t_rekam_medis_kd_rekam_medis" class="java.lang.String"/>
+	<field name="t_rekam_medis_tgl_rekam_medis" class="java.sql.Date"/>
+	<field name="t_rekam_medis_kd_kunjungan" class="java.lang.String"/>
+	<field name="t_rekam_medis_hasil_diagnosa" class="java.lang.String"/>
+	<field name="t_rekam_medis_total_biaya" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="88" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="630" height="84" uuid="eaaf6182-0d0b-4acf-9188-f141df5f0e1c"/>
+				<imageExpression><![CDATA["/Users/andikhadian/NetBeansProjects/klinik/src/klinik/gambar/kop.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="11" width="555" height="20" uuid="80420d86-a708-4c1a-87d6-b26e989157f5"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN REKAM MEDIS PASIEN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="64" width="100" height="20" uuid="2c405bfb-aed3-47a1-87d0-ac65e7b536c2"/>
+				<text><![CDATA[Kode Rekam Medis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="64" width="146" height="20" uuid="b9a898b0-bda6-4384-8fe4-a8d08a21b0ba"/>
+				<text><![CDATA[Tanggal Rekam Medis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="246" y="64" width="100" height="20" uuid="a66078c8-8431-4f20-9454-01e2cd4f7d34"/>
+				<text><![CDATA[Kode Kunjungan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="64" width="100" height="20" uuid="3ee614a9-f7c3-43b6-8962-7474c422ef3a"/>
+				<text><![CDATA[Hasil Diagnosa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="64" width="100" height="20" uuid="13e742c9-8ae3-4c98-bc15-dfb95db322bc"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Total Biaya]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="164" y="31" width="100" height="20" uuid="22080463-d97a-49ed-8f2f-9300daad61c0"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMMMM yyyy",new java.util.Locale("id")).format($P{tgl_awal})]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="294" y="31" width="100" height="20" uuid="1786470d-bb2e-49e8-a1c3-32905d4a6243"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMMMM yyyy",new java.util.Locale("id")).format($P{tgl_akhir})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="264" y="31" width="23" height="20" uuid="b5bbb402-b7cf-4438-b1e7-7af10c96ac66"/>
+				<text><![CDATA[s/d]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="d4a118b3-9450-4855-a2d6-f467e2a79415"/>
+				<textFieldExpression><![CDATA[$F{t_rekam_medis_kd_rekam_medis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="146" height="20" uuid="cc83431b-5905-4ef3-8e09-181f8827bcb0"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE d MMMMM yyyy",new java.util.Locale("id")).format($F{t_rekam_medis_tgl_rekam_medis})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="246" y="0" width="100" height="20" uuid="53d60ba7-433a-4194-844d-4a006ed049e2"/>
+				<textFieldExpression><![CDATA[$F{t_rekam_medis_kd_kunjungan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="346" y="0" width="137" height="20" uuid="cbe351fc-f991-455a-8532-83b9f45680b0"/>
+				<textFieldExpression><![CDATA[$F{t_rekam_medis_hasil_diagnosa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="2" width="100" height="20" uuid="bdb65ab9-dd0f-43a1-967b-d13024ff79b6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{t_rekam_medis_total_biaya}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="36" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="16" width="40" height="20" uuid="9201315f-0e1e-4020-80d2-a668dc998c0b"/>
+				<textFieldExpression><![CDATA["/" + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="423" y="16" width="92" height="20" uuid="909cdeb4-a44a-4277-a2d3-b3d00adc50f1"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="150" splitType="Stretch">
+			<staticText>
+				<reportElement x="338" y="48" width="41" height="20" uuid="5c855eb5-5c81-4668-9971-5ba8b79f5497"/>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="379" y="48" width="158" height="20" uuid="2bd30043-65c1-4714-9c60-692edb750ea4"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE d MMMMM yyyy",new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="358" y="127" width="109" height="20" uuid="8670da67-6d1c-4405-a523-5a2a01764d6d"/>
+				<text><![CDATA[Ahmad Hartono, M.M.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="68" width="90" height="20" uuid="98290b87-58ec-4880-a0ab-2d903a50e8f3"/>
+				<text><![CDATA[Petugas Klinik]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
