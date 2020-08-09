@@ -34,4 +34,13 @@ klinik.sql
 ### Screenshoot :
 
 ![alt text](https://github.com/andikhadian/Sistem-Informasi-Pelayanan-Klinik-Java-Desktop/blob/master/src/klinik/gambar/0.png?raw=true)
+![alt text](https://github.com/andikhadian/Sistem-Informasi-Pelayanan-Klinik-Java-Desktop/blob/master/src/klinik/gambar/1.png?raw=true)
+![alt text](https://github.com/andikhadian/Sistem-Informasi-Pelayanan-Klinik-Java-Desktop/blob/master/src/klinik/gambar/2.png?raw=true)
+![alt text](https://github.com/andikhadian/Sistem-Informasi-Pelayanan-Klinik-Java-Desktop/blob/master/src/klinik/gambar/3.png?raw=true)
+![alt text](https://github.com/andikhadian/Sistem-Informasi-Pelayanan-Klinik-Java-Desktop/blob/master/src/klinik/gambar/4.png?raw=true)
+![alt text](https://github.com/andikhadian/Sistem-Informasi-Pelayanan-Klinik-Java-Desktop/blob/master/src/klinik/gambar/5.png?raw=true)
+![alt text](https://github.com/andikhadian/Sistem-Informasi-Pelayanan-Klinik-Java-Desktop/blob/master/src/klinik/gambar/6.png?raw=true)
+![alt text](https://github.com/andikhadian/Sistem-Informasi-Pelayanan-Klinik-Java-Desktop/blob/master/src/klinik/gambar/7.png?raw=true)
+
+
 
